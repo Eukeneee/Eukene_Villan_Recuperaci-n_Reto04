@@ -1,0 +1,17 @@
+library(digest)
+library(discretization)
+library(dplyr)
+library(EnvStats)
+library(fastDummies)
+library(naniar)
+library(nortest)
+library(readxl)
+library(smoothmest)
+library(VIM)
+library(plumber)
+datos<- read.csv("C:/Users/ev269/Downloads/netflix_recuperacion.csv")
+
+summary(datos)
+sd_release<- sd(datos$release_year, na.rm = TRUE)
+# ¿Cuántos géneros de películas y series distintos hay? 
+length(unique(datos$listed_in))
